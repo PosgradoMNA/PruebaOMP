@@ -6,15 +6,18 @@
 
 #define N 1000
 #define chunk 100
-#define mostrar 10
 
-void imprimeArreglo(float* d);
+void imprimeArreglo(float* d, int mostrar);
 
 int main()
 {
     std::cout << "Sumando Arreglos en Paralelo!\n";
     float a[N], b[N], c[N];
     int i;
+
+    int mostrar;
+    std::cout << "Cuantos elementos sumados quieres mostrar ?" << std::endl;
+    std::cin >> mostrar;
 
     for (i = 0; i < N; i++) {
         a[i] = i + 1 ;
@@ -31,15 +34,15 @@ int main()
     }
 
     std::cout << "Imprimiendo los primeros " << mostrar << " valores del arreglo a: " << std::endl;
-    imprimeArreglo(a);
+    imprimeArreglo(a, mostrar);
     std::cout << "Imprimiendo los primeros " << mostrar << " valores del arreglo b: " << std::endl;
-    imprimeArreglo(b);
+    imprimeArreglo(b, mostrar);
     std::cout << "Imprimiendo los primeros " << mostrar << " valores del arreglo c: " << std::endl;
-    imprimeArreglo(c);
+    imprimeArreglo(c, mostrar);
 
 }
 
-void imprimeArreglo(float* d) {
+void imprimeArreglo(float* d, int mostrar) {
     for (int x = 0; x < mostrar; x++)
         std::cout << d[x] << " - ";
     std::cout << std::endl;
